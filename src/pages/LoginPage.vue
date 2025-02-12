@@ -40,9 +40,14 @@ watch(data, (val) => {
 })
 
 const isUserInputValid = (input:string): boolean => {
-    const pattern = new RegExp()
+    const pattern = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    return pattern.test(input);
 }
-
+if(isUserInputValid("frdrfesrd.@gmail.com")){
+    console.log("ça marche hehe")
+}else {
+    console.log("oula")
+}
 const submitHandler = () => {
 
 }
